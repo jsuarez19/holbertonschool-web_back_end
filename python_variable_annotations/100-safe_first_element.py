@@ -3,10 +3,10 @@
 Type-annotated function "element_length"
 
 """
-from typing import Union, Sequence
+from typing import Union, Sequence, Any
 
 
-def safe_first_element(lst: Sequence[any]) -> Union[any, None]:
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     """
     Receives a sequence
     Returns a the first element if the sequence exists
