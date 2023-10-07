@@ -9,5 +9,5 @@ def schools_by_topic(mongo_collection, topic):
     Find documents in the collection where the
     "topics" field contains the specified topic
     """
-    new_collection = mongo_collection.find({ "topic": topic})
+    new_collection = mongo_collection.find({ "topics": topic })
     return list(new_collection)
