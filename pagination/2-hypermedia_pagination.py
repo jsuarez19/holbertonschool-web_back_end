@@ -56,7 +56,7 @@ class Server:
         output = {}
         pages = self.dataset()
         number_pages = len(pages) / page_size
-        number_pages = math.floor(number_pages)
+        number_pages = math.ceil(number_pages)
 
         output["page_size"] = page_size
 
