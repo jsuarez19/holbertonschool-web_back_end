@@ -7,11 +7,11 @@ import pymongo
 if __name__ == "__main__":
     client = pymongo.MongoClient('mongodb://localhost:27017')
     db = client.logs
-    collection = db.nginx
+    collection_used = db.nginx
 
-    count_logs = collection.count_documents({})
+    count_logs = collection_used.count_documents({})
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-    status = collection.count_documents({
+    status = collection_used.count_documents({
         "method": "GET",
         "path": "/status"
     })
@@ -19,6 +19,6 @@ if __name__ == "__main__":
     print("{} logs".format(count_logs))
     print("Methods:")
     for method in methods:
-        count = collection.count_documents({"method": method})
+        count = collection_used.count_documents({"method": method})
         print("\t method {}: {}".format(method, count))
     print("{} status check".format(status))
