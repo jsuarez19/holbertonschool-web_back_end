@@ -55,7 +55,7 @@ class Server:
         """
         output = {}
         pages = self.dataset()
-        number_pages = (pages + 1) / page_size
+        number_pages = len(pages) / page_size
         number_pages = int(number_pages)
 
         output["page_size"] = page_size
