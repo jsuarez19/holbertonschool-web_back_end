@@ -62,7 +62,7 @@ class Server:
 
         output["page"] = page
 
-        if len(number_pages) == page:
+        if number_pages == page:
             output["next_page"] = None
         else:
             output["next_page"] = page + 1
