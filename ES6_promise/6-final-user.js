@@ -8,7 +8,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       results.map((o) => ({
         status: o.status,
         /* condición ? valor_si_verdadero : valor_si_falso */
-        value: o.status==='fulfilled' ? o.value: String(o.reason),
+        value: o.status === 'fulfilled' ? o.value : String(o.reason),
       }))
     ));
 }
