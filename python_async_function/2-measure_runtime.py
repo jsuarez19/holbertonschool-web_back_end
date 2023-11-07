@@ -5,19 +5,16 @@ async function "measure_time"
 import asyncio
 from typing import List
 import time 
-wait_random = __import__('0-basic_async_syntax').wait_random
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def wait_n(n: int, max_delay: int = 10) -> List[float]:
+async def measure_time (n: int, max_delay: int = 10) -> float:
     """
-    Spawns 'wait_random' 'n' times with
-    the specified max_delay
-    Returns the list of all the delays
-    """
-    tasks = []
-    for i in range(n):
-        tasks.append(wait_random(max_delay))
 
-    # Run the unpacked list tasks in parallel
-    results = await asyncio.gather(*tasks)
-    return sorted(results)
+    """
+    totalDelay = 0
+    delays = wait_n(n, max_delay)
+    for delay in delays:
+        totalDelay += delay
+    
+    return (totalDelay / n)
