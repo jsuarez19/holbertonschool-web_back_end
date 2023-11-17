@@ -56,11 +56,11 @@ class Server:
         output = {}
         pages = self.dataset()
         number_pages = len(pages) / page_size
-        number_pages = math.ceil(number_pages)
+        number_pages = math.floor(number_pages)
 
         output["page_size"] = page_size
-
         output["page"] = page
+        output["data"] = self.get_page(page, page_size)
 
         if number_pages == page:
             output["next_page"] = None
