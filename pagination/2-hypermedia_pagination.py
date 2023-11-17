@@ -67,10 +67,10 @@ class Server:
         else:
             output["next_page"] = page + 1
 
-        if page < 2:
-            output["previous_page"] = None
-        else:
+        if page > 1:
             output["previous_page"] = int(page - 1)
+        else:
+            output["previous_page"] = None
         output["total_pages"] = number_pages
 
         return output
