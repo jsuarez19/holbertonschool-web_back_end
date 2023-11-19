@@ -55,7 +55,7 @@ class Server:
             pages.append(self.indexed_dataset()[i])
 
         output = {}
-        output["index"] = index 
+        output["index"] = index
         output["next_index"] = next_index
         output["page_size"] = page_size
         output["data"] = pages
