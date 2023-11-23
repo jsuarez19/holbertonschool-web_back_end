@@ -3,7 +3,7 @@ export default function cleanSet(set, startString) {
   if (typeof set !== 'object' || typeof startString !== 'string' || startString.length === 0) return '';
 
   for (const element of set) {
-    if (element.startsWith(startString)) {
+    if (element && element.startsWith(startString)) {
       const remainingPart = element.slice(startString.length);
       if (remainingPart.startsWith('-')) {
         wordsArray.push(element);
