@@ -9,8 +9,8 @@ export default function cleanSet(set, startString) {
         wordsArray.push(element);
       } else {
         wordsArray.push(remainingPart);
+      }
     }
-  }
-
+  }  
   return wordsArray.join('-');
 }
