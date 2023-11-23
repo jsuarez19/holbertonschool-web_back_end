@@ -1,6 +1,6 @@
 export default function cleanSet(set, startString) {
   const wordsArray = [];
-  if (!Array.isArray(set) || typeof startString !== 'string' || startString.length === 0) return '';
+  if (typeof set !== 'object' || typeof startString !== 'string' || startString.length === 0) return '';
 
   for (const element of set) {
     if (element.startsWith(startString)) {
@@ -11,6 +11,6 @@ export default function cleanSet(set, startString) {
         wordsArray.push(remainingPart);
       }
     }
-  }  
+  }
   return wordsArray.join('-');
 }
